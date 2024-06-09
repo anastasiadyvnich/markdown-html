@@ -6,7 +6,8 @@ def md_to_html(md_text):
 
     html = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', html)
     html = re.sub(r'_(.*?)_', r'<i>\1</i>', html)
-
+    html = re.sub(r'```\n(.*?)\n```', r'<pre>\1</pre>', html, flags=re.DOTALL)
+    html = re.sub(r'`(.*?)`', r'<tt>\1</tt>', html)
     return html
 
 def main(input_file, output_file=None):
