@@ -8,6 +8,11 @@ def md_to_html(md_text):
     html = re.sub(r'_(.*?)_', r'<i>\1</i>', html)
     html = re.sub(r'```\n(.*?)\n```', r'<pre>\1</pre>', html, flags=re.DOTALL)
     html = re.sub(r'`(.*?)`', r'<tt>\1</tt>', html)
+
+    paragraphs = re.split(r'\n\s*\n', html)
+    paragraphs = ['<p>{}</p>'.format(p.replace("\n", " ")) for p in paragraphs]
+    html = "\n".join(paragraphs)
+
     return html
 
 def main(input_file, output_file=None):
