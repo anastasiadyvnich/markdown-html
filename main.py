@@ -1,10 +1,15 @@
+import re
 import sys
+
+def md_to_html(md_text):
+    html = md_text
+    return html
 
 def main(input_file, output_file=None):
     with open(input_file, 'r', encoding='utf-8') as f:
         md_text = f.read()
 
-    html = md_text
+    html = md_to_html(md_text)
 
     if output_file:
         with open(output_file, 'w', encoding='utf-8') as f:
