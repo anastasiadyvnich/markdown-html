@@ -51,4 +51,4 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ### Revert commit
 
-git link
+https://github.com/anastasiadyvnich/markdown-html/commit/61d2e121ce422506da7ad057d134f5e72f3f344e
